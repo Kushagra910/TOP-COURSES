@@ -1,0 +1,29 @@
+.spinner {
+  width: 80px;
+  height: 80px;
+  display: grid;
+  color:#2c2862;
+  background:
+    conic-gradient(from -153deg at right,#0000,currentColor 1deg 126deg,#0000 127deg) calc(50% + 5px) 0   /10px 50%,
+    conic-gradient(from   27deg at left ,#0000,currentColor 1deg 126deg,#0000 127deg) calc(50% - 5px) 100%/10px 50%,
+
+    linear-gradient(to top    right,currentColor 50%,#0000 0%) calc(50% + 10px) calc(50% - 10px) /20px 20px,
+    linear-gradient(to bottom left ,currentColor 50%,#0000 0%) calc(50% - 10px) calc(50% + 10px) /20px 20px;
+  background-repeat: no-repeat;
+  -webkit-mask:radial-gradient(circle 5px,#0000 90%,#000);
+  animation:sh6 1.5s infinite linear;
+}
+.spinner:before,
+.spinner:after {
+  content: "";
+  grid-area: 1/1;
+  background:inherit; 
+  transform: rotate(60deg);
+}
+.spinner:after {
+  transform: rotate(120deg);
+}
+
+@keyframes sh6 { 
+  100%{transform: rotate(1turn)}
+}
